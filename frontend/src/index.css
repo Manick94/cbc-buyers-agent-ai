@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@variant dark (&:is(.dark, .dark *));
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #F8F9FA;
+}
+
+.dark body {
+  background: #0f172a;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}

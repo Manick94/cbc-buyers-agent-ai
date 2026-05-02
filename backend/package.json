@@ -1,0 +1,29 @@
+{
+  "name": "buyers-agent-backend",
+  "version": "1.0.0",
+  "description": "AI Buyers Agent Companion - Backend API",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:init": "tsx src/db/schema.ts",
+    "seed": "tsx src/db/seed.ts",
+    "download-model": "tsx scripts/download-model.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "node-sqlite3-wasm": "^0.8.16",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.24",
+    "@types/uuid": "^9.0.8",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  }
+}
