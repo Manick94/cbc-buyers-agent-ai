@@ -2,8 +2,8 @@ services:
   - type: web
     name: buyers-agent-backend
     env: node
-    region: sydney
-    plan: free
+    region: singapore
+    plan: starter
     buildCommand: cd backend && npm install && npm run build && npm run db:init && npm run seed
     startCommand: cd backend && npm start
     envVars:
@@ -19,7 +19,6 @@ services:
   - type: web
     name: buyers-agent-frontend
     env: static
-    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
