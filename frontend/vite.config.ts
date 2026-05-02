@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   optimizeDeps: {
-    exclude: ['@huggingface/transformers'],
+    exclude: ['@huggingface/transformers', '@mediapipe/tasks-genai'],
   },
   server: {
     port: 5173,

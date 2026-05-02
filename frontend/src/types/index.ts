@@ -25,7 +25,8 @@ export interface ConversationMessage {
   timestamp: string
 }
 
-export type LLMProvider = 'local' | 'ollama' | 'gemini' | 'openai'
+export type LLMProvider = 'local' | 'ollama' | 'gemini' | 'openai' | 'openrouter'
+export type LocalModelType = 'smollm2' | 'gemma4b'
 
 export interface LLMSettings {
   provider: LLMProvider
@@ -33,6 +34,9 @@ export interface LLMSettings {
   openaiKey?: string
   ollamaUrl?: string
   ollamaModel?: string
+  openrouterKey?: string
+  openrouterModel?: string
+  localModelType?: LocalModelType
 }
 
 export interface SuggestionCard {

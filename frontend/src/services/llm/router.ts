@@ -3,6 +3,7 @@ import { callGemini } from './gemini'
 import { callOpenAI } from './openai'
 import { callOllama } from './ollama'
 import { callLocalModel } from './local'
+import { callOpenRouter } from './openrouter'
 import { getDefaultSettings } from '../keyStorage'
 import type { LLMProvider, ConversationMessage } from '../../types'
 
@@ -19,8 +20,11 @@ export async function callLLM(req: LLMRequest, provider?: LLMProvider): Promise<
       return callOpenAI(req, settings.openaiKey)
     case 'ollama':
       return callOllama(req, settings.ollamaUrl, settings.ollamaModel)
+    case 'openrouter':
+      if (!settings.openrouterKey) throw new Error('OpenRouter API key not configured. Go to Settings.')
+      return callOpenRouter(req, settings.openrouterKey, settings.openrouterModel)
     case 'local':
-      return callLocalModel(req)
+      return callLocalModel(req, settings.localModelType ?? 'smollm2')
     default:
       throw new Error(`Unknown provider: ${active}`)
   }
